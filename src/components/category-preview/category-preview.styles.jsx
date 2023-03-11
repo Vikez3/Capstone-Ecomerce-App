@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const CategoryPreviewContainer = styled.div`
   display: flex;
@@ -18,4 +18,13 @@ export const Preview = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    /* row-gap: 20px; */
+  }
 `;
