@@ -6,6 +6,7 @@ import {
 
 import { useSelector } from "react-redux";
 import {
+  CardInfo,
   CheckoutContainer,
   CheckoutHeader,
   HeaderBlock,
@@ -40,6 +41,9 @@ const Checkout = () => {
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <Total>Total: ${cartTotal}</Total>
+      <CardInfo>
+        <h4>Plese use card number 4242 4242 4242 4242 it is stripe test card</h4>
+      </CardInfo>
       <PaymentForm />
     </CheckoutContainer>
   );

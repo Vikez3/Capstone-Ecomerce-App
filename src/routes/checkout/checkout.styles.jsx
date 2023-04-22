@@ -37,3 +37,13 @@ export const Total = styled.span`
   margin-top: 30px;
   margin-left: auto;
 `;
+
+export const CardInfo = styled.div`
+  margin-top: 50px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #ffcccb;
+  color: white;
+  border-radius: 5px;
+  border: 3px solid #f8b2b1;
+`;

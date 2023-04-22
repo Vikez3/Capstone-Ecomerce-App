@@ -1,14 +1,13 @@
 import { useState } from 'react';
 
+import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import {
-  signInAuthUserWithEmailAndPassword,
-  signInWithGooglePopup,
+  signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils';
 
-import { SignInContainer, ButtonsContainer } from './sign-in-form.styles';
+import { ButtonsContainer, SignInContainer } from './sign-in-form.styles';
 
 const defaultFormFields = {
   email: '',
@@ -23,15 +22,16 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
-  };
+  // const signInWithGoogle = async () => {
+  //   await signInWithGooglePopup();
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
+      alert('you are signed in')
       resetFormFields();
     } catch (error) {
       console.log('user sign in failed', error);
@@ -68,13 +68,15 @@ const SignInForm = () => {
         />
         <ButtonsContainer>
           <Button type='submit'>Sign In</Button>
-          <Button
+
+          {/* need to fix bug, cant sign up in production */}
+          {/* <Button
             buttonType={BUTTON_TYPE_CLASSES.google}
             type='button'
             onClick={signInWithGoogle}
           >
             Sign In With Google
-          </Button>
+          </Button> */}
         </ButtonsContainer>
       </form>
     </SignInContainer>
